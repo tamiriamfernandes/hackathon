@@ -12,13 +12,17 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import hotelTemoana from "../../assets/hotelTeMoana.png";
 import stepEnum from "../../enum/stepPerfilEnum";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "../../Components/Header/Header";
 import VLibras from "@djpfs/react-vlibras/dist/types";
 
 function HotelOption() {
   const [step, setStep] = useState<stepEnum>(5);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="App overflow-hidden font-body">

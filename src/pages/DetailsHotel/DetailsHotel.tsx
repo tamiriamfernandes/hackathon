@@ -8,71 +8,132 @@ import {
   Star,
   Wheelchair,
   WifiHigh,
-  UmbrellaSimple
+  UmbrellaSimple,
+  X,
 } from "phosphor-react";
 import stepEnum from "../../enum/stepPerfilEnum";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import hotelTemoana from "../../assets/hotelTeMoana.png";
 import { Link as RouterLink } from "react-router-dom";
 import Header from "../../Components/Header/Header";
+import Dialog from "../../Components/Dialog/Dialog";
+import facebook from "../../assets/facebook.svg";
+import gmail from "../../assets/gmail.svg";
+import email from "../../assets/email.svg";
 
 function DetailsHotel() {
-	const [step, setStep] = useState<stepEnum>(6);
-	return (
-		<div className='App overflow-hidden font-body'>
-			<Header />
+  const [step, setStep] = useState<stepEnum>(6);
+  const [dialog, setDialog] = useState<Boolean>(false);
 
-			<div className='flex items-center justify-start'>
-				<div className='h-0.5 w-20 bg-gray-400'></div>
-				<div>
-					{step > stepEnum.pcd ? (
-						<CheckCircle size={24} color='#708d81' />
-					) : step == stepEnum.pcd ? (
-						<RadioButton size={24} color='#708d81' />
-					) : (
-						<Circle size={24} color='#708d81' />
-					)}
-				</div>
-				<div className='h-0.5 w-20 bg-gray-400'></div>
-				<div>
-					{step > stepEnum.optionsAccomodation ? (
-						<CheckCircle size={24} color='#708d81' />
-					) : step == stepEnum.optionsAccomodation ? (
-						<RadioButton size={24} color='#708d81' />
-					) : (
-						<Circle size={24} color='#708d81' />
-					)}
-				</div>
-				<div className='h-0.5 w-20 bg-gray-400'></div>
-				<div className=''>
-					{step > stepEnum.detailAccomodation ? (
-						<CheckCircle size={24} color='#708d81' />
-					) : step == stepEnum.detailAccomodation ? (
-						<RadioButton size={24} color='#708d81' />
-					) : (
-						<Circle size={24} color='#708d81' />
-					)}
-				</div>
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  return (
+    <div className="App overflow-hidden font-body">
+      <Header />
 
-				<div className='h-0.5 w-20 bg-gray-400'></div>
-			</div>
-			<div className='grid grid-cols-3 ml-6'>
-				<div className='flex justify-center items-center col-start-1'>
-					<label className='ml-2 text-[8px] text-gray-400 font-bold'>
-						Perfil Definido
-					</label>
-				</div>
-				<div className='flex justify-center items-center col-start-2'>
-					<label className='-ml-6 w-20 text-[8px] text-gray-400 font-bold'>
-						Opções de Acomodação
-					</label>
-				</div>
-				<div className='flex justify-start items-center col-start-3'>
-					<label className='-ml-3 w-20 text-[8px] text-gray-400 font-bold'>
-						Detalhes da Acomodação
-					</label>
-				</div>
-			</div>
+      {dialog ? (
+        <Dialog>
+          <div className="grid grid-cols-3">
+            <div className="col-start-2">
+              <img
+                src="../images/logo.svg"
+                className=" top-6 left-4"
+                alt="logo"
+              />
+            </div>
+            <div className="flex justify-end col-start-3">
+              <button type="button" onClick={() => setDialog(!dialog)}>
+                <X className="w-6 h-6 text-[#780000]" />
+              </button>
+            </div>
+          </div>
+
+          <div className="flex justify-center items-center mt-7">
+            <button className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white">
+              <img src={facebook} className="flex mr-2" />
+              <span>ACESSE COM O FACEBOOK</span>
+            </button>
+          </div>
+
+          <div className="flex justify-center items-center mt-8">
+            <RouterLink
+              to={"/payment-accomodation"}
+              className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white"
+            >
+              <img src={gmail} className="flex mr-2" />
+              <span>ACESSE COM O GOOGLE</span>
+            </RouterLink>
+          </div>
+
+          <div className="flex justify-center items-center mt-8">
+            <button className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white">
+              <img src={email} className="flex mr-2" />
+              <span>ACESSE COM O E-MAIL</span>
+            </button>
+          </div>
+
+          <div className="flex justify-center items-center mt-8">
+            <button className="justify-center w-52 text-center bg-white border border-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-sm text-[#780000]">
+              <span>CADASTRE-SE</span>
+            </button>
+          </div>
+        </Dialog>
+      ) : null}
+
+      <div className="flex items-center justify-start">
+        <div className="h-0.5 w-20 bg-gray-400"></div>
+        <div>
+          {step > stepEnum.pcd ? (
+            <CheckCircle size={24} color="#708d81" />
+          ) : step == stepEnum.pcd ? (
+            <RadioButton size={24} color="#708d81" />
+          ) : (
+            <Circle size={24} color="#708d81" />
+          )}
+        </div>
+        <div className="h-0.5 w-20 bg-gray-400"></div>
+        <div>
+          {step > stepEnum.optionsAccomodation ? (
+            <CheckCircle size={24} color="#708d81" />
+          ) : step == stepEnum.optionsAccomodation ? (
+            <RadioButton size={24} color="#708d81" />
+          ) : (
+            <Circle size={24} color="#708d81" />
+          )}
+        </div>
+        <div className="h-0.5 w-20 bg-gray-400"></div>
+        <div className="">
+          {step > stepEnum.detailAccomodation ? (
+            <CheckCircle size={24} color="#708d81" />
+          ) : step == stepEnum.detailAccomodation ? (
+            <RadioButton size={24} color="#708d81" />
+          ) : (
+            <Circle size={24} color="#708d81" />
+          )}
+        </div>
+
+        <div className="h-0.5 w-20 bg-gray-400"></div>
+      </div>
+      <div className="grid grid-cols-3 ml-6">
+        <div className="flex justify-center items-center col-start-1">
+          <label className="ml-2 text-[8px] text-gray-400 font-bold">
+            Perfil Definido
+          </label>
+        </div>
+        <div className="flex justify-center items-center col-start-2">
+          <label className="-ml-6 w-20 text-[8px] text-gray-400 font-bold">
+            Opções de Acomodação
+          </label>
+        </div>
+        <div className="flex justify-start items-center col-start-3">
+          <label className="-ml-3 w-20 text-[8px] text-gray-400 font-bold">
+            Detalhes da Acomodação
+          </label>
+        </div>
+      </div>
 
       <div className="mb-28">
         <div className=" flex justify-center mt-4">
@@ -96,26 +157,26 @@ function DetailsHotel() {
                 </p>
               </div>
 
-							<div className='flex justify-end col-start-6'>
-								<Star
-									className='ml-6'
-									size={16}
-									color='#fbf418'
-									weight='fill'
-								/>
-								4.5
-							</div>
-						</div>
-						<div className='flex justify-end mr-2'>
-							<a className='text-[#780000] text-xs underline font-bold'>
-								Ver comentários
-							</a>
-						</div>
+              <div className="flex justify-end col-start-6">
+                <Star
+                  className="ml-6"
+                  size={16}
+                  color="#fbf418"
+                  weight="fill"
+                />
+                4.5
+              </div>
+            </div>
+            <div className="flex justify-end mr-2">
+              <a className="text-[#780000] text-xs underline font-bold">
+                Ver comentários
+              </a>
+            </div>
 
-						<div className='w-full bg-[#708D81] rounded-xl px-6 py-3 mt-4'>
-							<label className='flex text-xs text-white'>
-								Principais Comodidades:
-							</label>
+            <div className="w-full bg-[#708D81] rounded-xl px-6 py-3 mt-4">
+              <label className="flex text-xs text-white">
+                Principais Comodidades:
+              </label>
 
               <div className="grid grid-cols-2 mt-4">
                 <div className="flex items-center col-start-1">
@@ -173,163 +234,165 @@ function DetailsHotel() {
               </div>
             </div>
 
-						<div className='w-full bg-white border border-[#708D81] rounded-xl px-6 py-3 mt-4'>
-							<label className='flex text-xs text-[#780000] font-bold'>
-								Quarto Standard:
-							</label>
+            <div className="w-full bg-white border border-[#708D81] rounded-xl px-6 py-3 mt-4">
+              <label className="flex text-xs text-[#780000] font-bold">
+                Quarto Standard:
+              </label>
 
-							<div className='grid grid-cols-2'>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/sleep.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Quarto casal - 30 m²
-									</label>
-								</div>
-								<div className='flex items-center col-start-1 '>
-									<Snowflake className='w-4 h-4' color='#708D81' />
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Ar-condicionado
-									</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/fastfood.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Frigobar
-									</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/people.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										2 pessoas por quarto
-									</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/wifi.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>Wifi</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/tv.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>TV</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/acessibility.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Acessivel
-									</label>
-								</div>
+              <div className="grid grid-cols-2">
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/sleep.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Quarto casal - 30 m²
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1 ">
+                  <Snowflake className="w-4 h-4" color="#708D81" />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Ar-condicionado
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/fastfood.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Frigobar
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/people.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    2 pessoas por quarto
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/wifi.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">Wifi</label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/tv.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">TV</label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/acessibility.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Acessivel
+                  </label>
+                </div>
 
-								<div className='col-start-2 row-start-1 row-span-4'>
-									<p className='ml-0.5 text-xs text-[#17191B]'>
-										Preço por Noite
-									</p>
-									<p className='ml-0.5 text-xs text-[#17191B] font-bold mt-2 mb-4'>
-										R$ 250,00
-									</p>
-									<RouterLink to={"/payment"}>
-										<label className="bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs">Reservar</label>
-									</RouterLink>
-								</div>
-							</div>
-						</div>
+                <div className="col-start-2 row-start-1 row-span-4">
+                  <p className="ml-0.5 text-xs text-[#17191B]">
+                    Preço por Noite
+                  </p>
+                  <p className="ml-0.5 text-xs text-[#17191B] font-bold mt-2 mb-4">
+                    R$ 250,00
+                  </p>
+                  <button className="bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs"
+				  type="button"
+				  onClick={() => setDialog(true)}>
+                    Reservar
+                  </button>
+                </div>
+              </div>
+            </div>
 
-						<div className='w-full bg-white border border-[#708D81] rounded-xl px-6 py-3 mt-4'>
-							<label className='flex text-xs text-[#780000] font-bold'>
-								Quarto Superior:
-							</label>
+            <div className="w-full bg-white border border-[#708D81] rounded-xl px-6 py-3 mt-4">
+              <label className="flex text-xs text-[#780000] font-bold">
+                Quarto Superior:
+              </label>
 
-							<div className='grid grid-cols-2'>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/sleep.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Quarto casal - 35 m²
-									</label>
-								</div>
-								<div className='flex items-center col-start-1 '>
-									<Snowflake className='w-4 h-4' color='#708D81' />
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Ar-condicionado
-									</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/fastfood.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Frigobar
-									</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/people.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										2 pessoas por quarto
-									</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/wifi.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>Wifi</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/tv.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>TV</label>
-								</div>
-								<div className='flex items-center col-start-1'>
-									<img
-										src={'/images/acessibility.svg'}
-										className='w-4 h-4 text-[#708D81]'
-									/>
-									<label className='ml-0.5 text-xs text-[#17191B]'>
-										Acessivel
-									</label>
-								</div>
+              <div className="grid grid-cols-2">
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/sleep.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Quarto casal - 35 m²
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1 ">
+                  <Snowflake className="w-4 h-4" color="#708D81" />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Ar-condicionado
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/fastfood.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Frigobar
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/people.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    2 pessoas por quarto
+                  </label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/wifi.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">Wifi</label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/tv.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">TV</label>
+                </div>
+                <div className="flex items-center col-start-1">
+                  <img
+                    src={"/images/acessibility.svg"}
+                    className="w-4 h-4 text-[#708D81]"
+                  />
+                  <label className="ml-0.5 text-xs text-[#17191B]">
+                    Acessivel
+                  </label>
+                </div>
 
-								<div className='col-start-2 row-start-1 row-span-4'>
-									<p className='ml-0.5 text-xs text-[#17191B]'>
-										Preço por Noite
-									</p>
-									<p className='ml-0.5 text-xs text-[#17191B] font-bold mt-2'>
-										R$ 360,00
-									</p>
-									<button className='bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs mt-3'>
-										Reservar
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+                <div className="col-start-2 row-start-1 row-span-4">
+                  <p className="ml-0.5 text-xs text-[#17191B]">
+                    Preço por Noite
+                  </p>
+                  <p className="ml-0.5 text-xs text-[#17191B] font-bold mt-2">
+                    R$ 360,00
+                  </p>
+                  <button className="bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs mt-3">
+                    Reservar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 export default DetailsHotel;
