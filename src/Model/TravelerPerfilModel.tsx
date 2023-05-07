@@ -10,7 +10,8 @@ interface ITravelerPerfilModel{
     pcd:number,
     typePcd:Array<PcdEnum>,
     dateInitial:string,
-    dateEnd:string
+    dateEnd:string,
+    other:string
 }
 
 export default ITravelerPerfilModel;

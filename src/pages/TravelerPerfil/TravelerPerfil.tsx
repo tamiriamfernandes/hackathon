@@ -45,6 +45,7 @@ function TravelerPerfil() {
     pcd: 0,
     dateInitial: "",
     dateEnd: "",
+    other:""
   });
 
   useEffect(() => {
@@ -589,9 +590,10 @@ function TravelerPerfil() {
                             <input
                               id=""
                               type="text"
-                              value=""
+                              value={travelerPerfil.other}
                               placeholder=""
                               className="px-4 w-36 h-7 text-black border border-[#780000] rounded"
+                              onChange={(e) => setTravelerPerfil({...travelerPerfil, other: e.target.value})}
                             />
                           </div>
                         ) : null}
