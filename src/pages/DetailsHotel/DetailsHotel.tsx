@@ -25,11 +25,10 @@ function DetailsHotel() {
   const [step, setStep] = useState<stepEnum>(6);
   const [dialog, setDialog] = useState<Boolean>(false);
 
-  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div className="App overflow-hidden font-body">
       <Header />
@@ -52,10 +51,13 @@ function DetailsHotel() {
           </div>
 
           <div className="flex justify-center items-center mt-7">
-            <button className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white">
+            <RouterLink
+              to={"/payment-accomodation"}
+              className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white"
+            >
               <img src={facebook} className="flex mr-2" />
               <span>ACESSE COM O FACEBOOK</span>
-            </button>
+            </RouterLink>
           </div>
 
           <div className="flex justify-center items-center mt-8">
@@ -69,16 +71,22 @@ function DetailsHotel() {
           </div>
 
           <div className="flex justify-center items-center mt-8">
-            <button className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white">
+            <RouterLink
+              to={"/payment-accomodation"}
+              className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white"
+            >
               <img src={email} className="flex mr-2" />
               <span>ACESSE COM O E-MAIL</span>
-            </button>
+            </RouterLink>
           </div>
 
           <div className="flex justify-center items-center mt-8">
-            <button className="justify-center w-52 text-center bg-white border border-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-sm text-[#780000]">
+            <RouterLink
+              to={"/payment-accomodation"}
+              className="w-52 bg-[#780000] hover:bg-grey text-grey-darkest font-bold py-2 px-4 inline-flex items-center rounded-3xl text-xs text-white"
+            >
               <span>CADASTRE-SE</span>
-            </button>
+            </RouterLink>
           </div>
         </Dialog>
       ) : null}
@@ -304,9 +312,11 @@ function DetailsHotel() {
                   <p className="ml-0.5 text-xs text-[#17191B] font-bold mt-2 mb-4">
                     R$ 250,00
                   </p>
-                  <button className="bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs"
-				  type="button"
-				  onClick={() => setDialog(true)}>
+                  <button
+                    className="bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs"
+                    type="button"
+                    onClick={() => setDialog(true)}
+                  >
                     Reservar
                   </button>
                 </div>

@@ -5,6 +5,7 @@ import FilterPeriod from "./pages/TravelerPerfil/TravelerPerfil";
 import DetailsHotel from "./pages/DetailsHotel/DetailsHotel";
 import HotelOption from "./pages/HotelOption/HotelOption";
 import Payment from "./pages/Payment/Payment";
+import FinshPayment from "./pages/FinishPayment/FinshPayment";
 
 export function Router() {
   return (
@@ -16,6 +17,7 @@ export function Router() {
         <Route path="details-hotel" element={<DetailsHotel />} />
         <Route path="hotel-option" element={<HotelOption />} />
         <Route path="payment-accomodation" element={<Payment />} />
+        <Route path="end-payment" element={<FinshPayment />} />
       </Route>
 
       <Route path="*" element={<Navigate to={"/"} />} />
