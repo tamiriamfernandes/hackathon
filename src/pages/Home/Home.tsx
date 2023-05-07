@@ -14,7 +14,6 @@ function Home() {
   return (
     <>
       <div className="App overflow-hidden mb-10 font-body">
-        <VLibras forceOnload={true} />
 
         <img src={logo} className="max-w-sm" alt="banner" />
         <label className="absolute top-10 left-8 text-white text-lg font-bold ">

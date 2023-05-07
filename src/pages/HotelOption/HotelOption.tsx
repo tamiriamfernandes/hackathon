@@ -15,6 +15,7 @@ import stepEnum from "../../enum/stepPerfilEnum";
 import { useState } from "react";
 
 import Header from "../../Components/Header/Header";
+import VLibras from "@djpfs/react-vlibras/dist/types";
 
 function HotelOption() {
   const [step, setStep] = useState<stepEnum>(5);

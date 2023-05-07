@@ -8,6 +8,7 @@ import {
   Star,
   Wheelchair,
   WifiHigh,
+  UmbrellaSimple
 } from "phosphor-react";
 import stepEnum from "../../enum/stepPerfilEnum";
 import { useState } from "react";
@@ -151,7 +152,7 @@ function DetailsHotel() {
                   </label>
                 </div>
                 <div className="flex items-center col-start-2 mt-2">
-                  <Wheelchair className="w-6 h-6" color="#FF7347" />
+                  <UmbrellaSimple className="w-6 h-6" color="white" />
                   <label className="ml-0.5 text-xs text-white">Beira-mar</label>
                 </div>
                 <div className="flex items-center col-start-1 mt-2">
