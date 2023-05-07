@@ -2,7 +2,7 @@ import { House, User,  Bed } from "phosphor-react";
 
 function MenuBottom() {
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full h-14   bg-[#800000] border-t border-gray-200 rounded-t-xl">
+    <div className="fixed bottom-0 left-0 z-50 w-full h-14   bg-[#780000] border-t border-gray-200 rounded-t-xl font-body">
       <div className="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
         <button
           type="button"
@@ -19,7 +19,7 @@ function MenuBottom() {
         >
          <Bed size={18} className="text-white" />
           <span className="text-xs text-white group-hover:text-blue-600 dark:group-hover:text-blue-500">
-            Minhas Hospedagens
+            Minhas Reservas
           </span>
         </button>
         <button

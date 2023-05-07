@@ -1,9 +1,11 @@
 enum stepEnum{
     location,
     perfil,
+    typeAccommodation,
     pcd,
     period,
-    accommodation
+    optionsAccomodation,
+    detailAccomodation
 }
 
 export default stepEnum;

@@ -4,7 +4,7 @@ import { FacebookLogo, InstagramLogo,YoutubeLogo,TwitterLogo } from "phosphor-re
 function Footer() {
 	return (
 		<>
-			<footer className='mt-28 relative bg-[#708D81] pt-8'>
+			<footer className='mt-28 relative bg-[#708D81] pt-8 font-body'>
 				<div className='container mx-auto px-4'>
 					<div className='flex flex-wrap text-left lg:text-left'>
 						<div className='w-full lg:w-6/12 px-4'>
@@ -19,25 +19,25 @@ function Footer() {
 									className='ml-2 text-lightBlue-600 shadow-lg font-normal h-5 w-5 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2'
 									type='button'
 								>
-									 <FacebookLogo  size={30} color="#eef0f1" weight="thin" />
+									 <FacebookLogo  size={30} color="#ffff" weight="thin" />
 								</button>
 								<button
 									className='ml-2 text-lightBlue-600 shadow-lg font-normal h-5 w-5 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2'
 									type='button'
 								>
-									 <InstagramLogo size={30} color="#eef0f1" weight="thin" />
+									 <InstagramLogo size={30} color="#ffff" weight="thin" />
 								</button>
 								<button
 									className='ml-2 text-lightBlue-600 shadow-lg font-normal h-5 w-5 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2'
 									type='button'
 								>
-									 <YoutubeLogo size={30} color="#eef0f1" weight="thin" />
+									 <YoutubeLogo size={30} color="#ffff" weight="thin" />
 								</button>
 								<button
 									className='ml-2 text-lightBlue-600 shadow-lg font-normal h-5 w-5 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2'
 									type='button'
 								>
-									<TwitterLogo size={30} color="#eef0f1" weight="thin" />
+									<TwitterLogo size={30} color="#ffff" weight="thin" />
 								</button>
 							</div>
 						</div>
@@ -132,8 +132,7 @@ function Footer() {
 					<div className='flex flex-wrap items-center md:justify-between justify-center mb-8'>
 						<div className='w-full md:w-4/12 px-4 mx-auto text-center'>
 							<div className='text-sm text-white font-semibold py-1'>
-								Copyright © <span id='get-current-year'>2023</span> Hacatanga
-								Desenvolvimento
+							Hacatanga © <span id='get-current-year'>2023</span>  Desenvolvimento
 							</div>
 						</div>
 					</div>
