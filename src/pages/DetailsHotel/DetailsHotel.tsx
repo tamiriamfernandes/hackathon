@@ -240,12 +240,12 @@ function DetailsHotel() {
 									<p className='ml-0.5 text-xs text-[#17191B]'>
 										Preço por Noite
 									</p>
-									<p className='ml-0.5 text-xs text-[#17191B] font-bold mt-2'>
+									<p className='ml-0.5 text-xs text-[#17191B] font-bold mt-2 mb-4'>
 										R$ 250,00
 									</p>
-									<button className='bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs mt-3'>
-										Reservar
-									</button>
+									<RouterLink to={"/payment"}>
+										<label className="bg-[#780000] text-white px-4 py-2 rounded-3xl text-xs">Reservar</label>
+									</RouterLink>
 								</div>
 							</div>
 						</div>

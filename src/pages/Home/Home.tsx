@@ -46,27 +46,6 @@ function Home() {
 
           <ul className="mt-2 flex overflow-y-auto">
             <li>
-              <RouterLink to={"/traveler-perfil?location=Destinos Próximos"}>
-                <div className="p-1 mb-2 border border-gray-300 rounded-md w-[222px]">
-                  <img
-                    src={near1}
-                    className="text-center w-[242px] rounded-md"
-                    alt="banner"
-                  />
-                  <p className="text-[#800000]  text-xs font-bold mb-2">
-                    Campos do Jordão
-                  </p>
-                  <p className="text-[#17191B] text-xs font-normal">
-                    Tem seu clima frio e sua incrível arquitetura inspirada em
-                    arquiteturas europeias.
-                  </p>
-                  <p className="text-[#17191B] text-xs font-normal mt-2">
-                    Fica aproximadamente 172 km.
-                  </p>
-                </div>
-              </RouterLink>
-            </li>
-            <li>
               <div className="ml-2 mb-2 p-1 border border-gray-300 rounded-md   w-[242px]">
                 <img
                   src={near2}
@@ -103,6 +82,27 @@ function Home() {
                   Fica aproximadamente 172 km.
                 </p>
               </div>
+            </li>
+            <li>
+              <RouterLink to={"/traveler-perfil?location=Destinos Próximos"}>
+                <div className="p-1 mb-2 border border-gray-300 rounded-md w-[222px]">
+                  <img
+                    src={near1}
+                    className="text-center w-[242px] rounded-md"
+                    alt="banner"
+                  />
+                  <p className="text-[#800000]  text-xs font-bold mb-2">
+                    Campos do Jordão
+                  </p>
+                  <p className="text-[#17191B] text-xs font-normal">
+                    Tem seu clima frio e sua incrível arquitetura inspirada em
+                    arquiteturas europeias.
+                  </p>
+                  <p className="text-[#17191B] text-xs font-normal mt-2">
+                    Fica aproximadamente 172 km.
+                  </p>
+                </div>
+              </RouterLink>
             </li>
             <li>
               <div className="ml-2 mb-2 p-1 border border-gray-300 rounded-md  w-[242px]">

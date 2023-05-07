@@ -15,7 +15,7 @@ export function Router() {
         <Route path="traveler-perfil" element={<FilterPeriod />} />
         <Route path="details-hotel" element={<DetailsHotel />} />
         <Route path="hotel-option" element={<HotelOption />} />
-         <Route path="payment" element={<Payment />} />
+        <Route path="payment-accomodation" element={<Payment />} />
       </Route>
 
       <Route path="*" element={<Navigate to={"/"} />} />
