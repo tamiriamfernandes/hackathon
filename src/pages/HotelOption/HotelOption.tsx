@@ -177,7 +177,7 @@ function HotelOption() {
             </RouterLink>
           </div>
         </div>
-        <div className=" grid grid-cols-1  justify-center mt-8">
+        <div className="flex justify-center mt-8">
           <div className="ml-2 p-1 w-[350px]">
             <img
               src={hotelTemoana}
