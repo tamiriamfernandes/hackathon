@@ -122,7 +122,7 @@ function HotelOption() {
         </div>
       </div>
       <div className=" ">
-        <div className=" grid grid-cols-1  justify-center mt-4">
+        <div className="flex justify-center mt-4">
           <div className="ml-2 p-1 w-[350px]">
             <img
               src={hotelTemoana}
