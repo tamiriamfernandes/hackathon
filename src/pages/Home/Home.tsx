@@ -47,7 +47,7 @@ function Home() {
           <ul className="mt-2 flex overflow-y-auto">
             <li>
               <RouterLink to={"/traveler-perfil?location=Destinos Próximos"}>
-                <div className="p-1 mb-2 border border-gray-300 rounded-md w-[242px]">
+                <div className="p-1 mb-2 border border-gray-300 rounded-md w-[222px]">
                   <img
                     src={near1}
                     className="text-center w-[242px] rounded-md"
