@@ -25,7 +25,7 @@ function Home() {
             <Wheelchair className="w-6 h-6" color="white" />
           </button>
         </div>
-        <img src={banner} className="max-w-sm" alt="banner" />
+        <img src={banner} className="max-w" alt="banner" />
 
         <label className="absolute top-32 left-4 text-[#17191B] text-base font-normal">
           Busque hotéis especializados em
